@@ -5,16 +5,24 @@ add_definitions("-DCONF_NO_GL")
 
 add_library(lib-obj STATIC obj.c)
 
+if(APPLE)
+	set(platform "osx")
+elseif(UNIX AND NOT APPLE)
+	set(platform "linux")
+else()
+	set(platform "win32")
+endif()
+
 install(
     TARGETS lib-obj
     CONFIGURATIONS Debug
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/Debug"
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/${platform}/Debug"
 )
 
 install(
     TARGETS lib-obj
     CONFIGURATIONS Release
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/Release"
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/${platform}/Release"
 )
 
 install(
