@@ -2312,7 +2312,7 @@ static void obj_write_map(FILE *fout, const obj *O, int mi, int ki, const char *
     }
 }
 
-static void obj_write_mtl(const obj *O, const char *mtl)
+void obj_write_mtl(const obj *O, const char *mtl)
 {
     FILE *fout;
     int   mi;
@@ -2361,7 +2361,7 @@ static void obj_write_mtl(const obj *O, const char *mtl)
     fclose(fout);
 }
 
-static void obj_write_obj(const obj *O, const char *obj,
+void obj_write_obj(const obj *O, const char *obj,
                                         const char *mtl, int prec)
 {
     FILE *fout;

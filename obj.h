@@ -123,6 +123,10 @@ void  obj_sort(obj *, int);
 float obj_acmr(obj *, int);
 
 void  obj_bound(const obj *, float *);
+
+void  obj_write_mtl(const obj* O, const char* mtl);
+void  obj_write_obj(const obj* O, const char* obj, const char* mtl_location, int prec);
+
 void  obj_write(const obj *, const char *, const char *, int);
 
 /*======================================================================+=====*/
